@@ -2,14 +2,31 @@
 #define MAIN_H
 #include <stdarg.h>
 
-int printf_char(va_list val);
-int _putchar(char c);
+/**
+ * struct con_specs - Struct of conversion specifiers
+ * @spec: The specifier
+ * @func: The function or conversion associated with
+ */
+
+typedef struct con_specs
+{
+	char spec;
+	int (*func)(va_list);
+	/* int (*f_ptr)(va_list, char[], int, int, int, int); */
+} con_specs_t;
+
+int con_char(va_list args);
+int con_str(va_list args);
+int con_perc(va_list args);
+int con_error(va_list args);
+int con_dec(va_list args);
+int con_int(va_list args);
+int con_bi(va_list args);
+int con_rot13(va_list args);
+int con_rev(va_list args);
+
 int _printf(const char *format, ...);
-int printf_string(va_list val);
-int _strlen(char *str);
-int _strlenc(const char *str);
-int print_37(void);
-int print_int(va_list args);
-int print_dec(va_list args);
+int our_putchar(char c);
+int select_con_spec(const char *format, int index, va_list args);
 
 #endif
