@@ -51,7 +51,7 @@ int con_str(va_list args)
  * Return: number of characters printed
  */
 
-int con_perc(_attribute_((unused)) va_list args)
+int con_perc(__attribute__((unused)) va_list args)
 {
 	int chars_printed = 0;
 
@@ -70,7 +70,7 @@ int con_perc(_attribute_((unused)) va_list args)
  * Return: returns error -1
  */
 
-int con_error(_attribute_((unused)) va_list args)
+int con_error(__attribute__((unused)) va_list args)
 {
 	int chars_printed = -1;
 
